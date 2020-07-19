@@ -1,0 +1,435 @@
+body{
+    font-family: 'Noto Sans', sans-serif;
+    font-size:14px;
+    margin:0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center; /*Places items in the body at a centered position*/
+    background: #D3D3D3;
+    min-height: 100vh;
+    list-style: none;
+}
+.bold{
+    font-weight: 700px;
+    font-size: 20px;
+    text-transform: uppercase; 
+    /*Custom bold class for the resume*/
+}
+.semi-bold{
+    font-weight: 500;
+    font-size:16px;
+}
+/*CV css beginning*/
+.resume{
+    width:800;
+    height: auto;
+    display: flex;
+    margin: 50px auto;
+}
+.resume .resume-left{
+    width: 280px;
+    background: #0bb5f4; /*Gives the left side of the resume a light blue color */
+}
+img{
+    display: block;
+    cursor:pointer;
+    transition: .5s ease;
+    opacity: 1;
+}
+.anchor{
+    color: white;
+}
+.resume .resume-left .resume-profile img{
+    width: 100%;
+    height: 280px;
+}
+.resume .resume-left .resume-profile:hover img{
+    opacity: .5; /*makes the profile picture transparent when the mouse icon hovers around it*/
+}
+.resume .resume-left .resume-content{
+    padding: 0 25px;
+}
+.resume .title{
+    margin-bottom: 20px;
+}
+
+.resume .resume-left .bold{
+color:#fff;
+}
+.resume .resume-left .regular{
+    color:#b1eaff;
+}
+.resume .resume-item{
+    padding: 25px 0;
+    border-bottom: 2px solid #b1eaff; /*makes the border color blend in with the left side of the resume background*/
+}
+.resume .resume-left .resume-item:last-child{
+border-bottom: 0px;
+}
+.resume .resume-left ul li{
+    display: flex;
+    align-items: center;/* Aligns items to the center */
+    margin-bottom: 10px;
+}
+.resume .resume-left ul li:last-child{
+    margin-bottom: 0;
+}
+.resume .resume-left ul li .icon{
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    color: #0bb5f4; /*Gives the icons a white background and the icons become blue and places them in a small circle beside the text*/
+    border-radius: 50%;
+    margin-right:15px;
+    font-size:16px;
+    position: relative;
+}
+.resume .icon i{
+    position: absolute; /*Allows icons to stay in the middle without any issues*/
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.resume .resume-left ul li .data{
+    color:#b1eaff;
+}
+.resume .resume-left .resume-skills ul li{
+    color:#b1eaff;
+    justify-content: space-between;
+}
+.resume .resume-left .resume-skills ul li .skill-name{
+    width: 25%;
+}
+.resume .resume-left .resume-skills ul li .skill-progress{
+    width: 60%;
+    margin:0 5px;
+    height: 5px;
+    background: #ff0000; /*This is used to show the percentage of my knowledge on each programming language
+    as compared to a professional.*/
+    position: relative;
+}
+.resume .resume-left .resume-skills ul li .skill-percentage{
+    width: 15%; /*this is how long the percentage bar is*/
+}
+.resume .resume-left .resume-skills ul li .skill-progress span{
+    position: absolute; /*allows the percentage to be shown in a white color without it the white color can't show the percentage*/
+    top: 0;
+    left:0;
+    height:100%;
+    background: #fff;
+}
+.resume .resume-right{
+    width: 520px;
+    background: #fff;
+    padding: 25px;
+}
+.resume .resume-right .bold{
+    color: #000000;
+}
+.resume .resume-right .resume-work ul,
+.resume .resume-right .resume-education ul{
+    padding-left: 40px;
+    overflow: hidden;
+    list-style-type: none;/*Removes bullet points*/
+}
+.resume .resume-right ul li{
+    position: relative;
+}
+.resume .resume-right ul li .date{
+    font-size: 16px;
+    font-weight: 500px;
+    margin-bottom: 15px; /*Positions*/
+}
+.resume .resume-right ul li .info{
+    margin-bottom: 20px;
+}
+.resume .resume-right ul li:last-child .info{
+    margin-bottom:0;
+}
+
+/*End of CV css*/
+.list{
+    list-style-type: none;
+}
+
+.links li {
+    display: inline;
+    padding: 0;
+    margin: 2 rem;
+    white-space: nowrap;
+    list-style-type: none; /*Makes the fontawsome links fade when the mouse hovers over it*/
+    opacity: 0.2;
+    padding: 1 rem;
+    
+}
+
+.links li:hover {
+    opacity: 2;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+    overflow: hidden;
+    color: cornsilk;
+}
+header{
+background:rgba(13,110,139,0.75);
+/*padding-top:20px;*/
+min-height: 60px;
+border-bottom: red 3px solid;
+}
+/*header a{
+    color:#ffffff;
+    text-decoration:none;
+    text-transform:uppercase;
+}*/
+footer{
+    background:var(--primary-color);
+    border-top: red 3px solid;/*A background for the footer and and a red line border above and beside it */
+    min-height: 20px;
+    text-align: center;
+    vertical-align: bottom;
+    
+}
+footer a{
+    text-decoration:none;
+    /*This removes the lines seperating each of the social media icons*/
+}
+/*header nav{
+    float:left;
+}*/
+
+.fab{
+color:white;
+}
+
+/*Start of Hamburger css*/
+:root{
+    --primary-color: rgba(13,110,139,0.75);
+    --overlay-color: rgba(24,39,51,0.85);
+    --menu-speed: 0.75s;
+}
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+.menu-wrap{
+    position:fixed;
+    top:0;
+    right:15px;
+    z-index:1;
+}
+
+.menu-wrap .toggler{
+    position: absolute;
+    top:0;
+    right:0;
+    z-index:2;
+    cursor:pointer; /*positioing for the menu*/
+    width:50px;
+    height:50px;
+    opacity:0;
+}
+
+.menu-wrap .hamburger {
+    position: absolute;
+    top:0;
+    right:0;
+    z-index:1;
+    width:45px;
+    height:60px;
+    padding:1 rem;
+    /*background: var(--primary-color); */
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+/* Hamburger line*/
+.menu-wrap .hamburger > div{
+    position: relative;
+    width: 100%;
+    height:2px;
+    background-color: #fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:all 0.4s ease;
+}
+/*Top and bottom lines for hamburger*/
+.menu-wrap .hamburger > div:before,
+.menu-wrap .hamburger > div:after{
+    content: "";
+    position: absolute;
+    z-index:1;
+    top: -10px;
+    width:100%;
+    height:2px;
+    background: inherit;
+}
+/*moves line down*/
+.menu-wrap .hamburger > div:after{
+    top:10px;
+}
+
+/*Toggler animate*/
+.menu-wrap .toggler:checked + .hamburger >div {
+    transform: rotate(135deg);
+}
+
+/*Turn lines into X*/
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after{
+    top:0;
+    transform: rotate(90deg);
+}
+
+/*Rotate on hover when checked*/
+.menu-wrap .toggler:checked:hover + .hamburger >div {
+    transform: rotate(225deg);
+}
+/*Show menu*/
+.menu-wrap .toggler:checked ~ .menu {
+    visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div{
+transform: scale(1);
+transition-duration: var(--menu-speed); /*The speed in which the animation takes place*/
+}
+
+.menu-wrap .toggler:checked ~ .menu > div >div{
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    visibility:hidden; /*Hides the menu so it appears only when the hamburger is clicked on*/
+    overflow: hidden;
+    display: flex;
+    align-items:center;
+    justify-content: center; /*places menu items in the center*/
+}
+
+.menu-wrap .menu > div{
+    background: var(--overlay-color);
+    border-radius:50%;
+    width:200vw;
+    height: 200vw;
+    display:flex;
+    flex:none;
+    align-items:center;
+    justify-content: center;
+    transform: scale(0);
+    transition: all 0.4s ease;
+}
+.menu-wrap .menu > div > div{
+    text-align:center;
+    max-width:90vw;
+    max-height: 100vh;
+    opacity:0;
+    transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li{
+    list-style:none;
+    color:#fff;
+    font-size:1.5rem;
+    padding: 1rem;
+}
+
+.menu-wrap .menu > div > div > ul > li > a {
+    color: inherit;
+    text-decoration:none;
+    transition: color 0.4s ease;
+}
+/*End of Css for Hamburger*/
+
+/*Loader css Beginning*/
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+
+
+.loader-container{
+	text-align: center;
+	background-color:var(--primary-color);/*makes use of the color in the root*/
+	overflow: hidden;
+}
+
+.box:nth-child(2n-1){
+	background-color: rgba(0,0,0,0.05);
+}
+
+.box{
+	display: inline-block;
+	height: 700px;
+	width: 33.3%;
+	position: relative;
+	/*margin:0 -4px -5px -2px;*/
+	transition: all .2s ease;
+}
+
+.myLoader{
+	position: relative;
+	width: 80px;
+	height: 80px;
+
+	top: 28%;
+	top: -webkit-calc(50% - 43px);
+	top: calc(50% - 43px);
+	left: 35%;
+	left: -webkit-calc(50% - 43px);
+	left: calc(50% - 43px); /*Movement for the loader*/
+
+	border-radius: 50px;
+	background-color: rgba(255, 255, 255, .2);
+	border-width: 40px;
+	border-style: double;
+	border-color:transparent  #fff;
+
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+		box-sizing:border-box;
+
+	-webkit-transform-origin:  50% 50%;
+		transform-origin:  50% 50% ;
+	-webkit-animation: myLoader 2s linear infinite;
+		animation: myLoader 2s linear infinite;
+	
+}
+
+@-webkit-keyframes myLoader{
+    0%{-webkit-transform:rotate(0deg);} /*Rotation*/
+    100%{-webkit-transform:rotate(360deg);}
+}
+
+@keyframes myLoader{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+/*Loader css end*/
+#overlay{
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .8);
+    position:fixed;
+    left:0;
+    top: 0;
+}
+
+@media(max-width:600px)
+{
+    body{
+        max-width: 100%;
+    border-radius:5px;
+    grid-column: 1;
+    }
+}
